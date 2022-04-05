@@ -22,19 +22,20 @@ cd decrypt-otpauth-files
 2. Install dependencies
 
 ```
-pipenv install
+python3.9 -m venv venv
+./venv/bin/pip install -r requirements.txt
 ```
 
 3. Decrypt your OTP Auth file
 
 ```
 # Decrypt a full backup file
-pipenv run python decrypt_otpauth.py decrypt_backup --encrypted-otpauth-backup <path to your OTP Auth backup>
+./venv/bin/python decrypt_otpauth.py decrypt_backup --encrypted-otpauth-backup <path to your OTP Auth backup>
 ```
 
 ```
 # Decrypt a single account export
-pipenv run python decrypt_otpauth.py decrypt_account --encrypted-otpauth-account <path to your OTP Auth account>
+./venv/bin/python decrypt_otpauth.py decrypt_account --encrypted-otpauth-account <path to your OTP Auth account>
 ```
 
 ## Demo
