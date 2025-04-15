@@ -206,6 +206,7 @@ def cli():
 @cli.command()
 @click.option('--encrypted-otpauth-account',
               help="path to your encrypted OTP Auth account (.otpauth)",
+              default="/account.otpauth",
               required=True,
               type=click.File('rb'))
 def decrypt_account(encrypted_otpauth_account):
@@ -265,6 +266,7 @@ def decrypt_account_12(archive, password):
 @cli.command()
 @click.option('--encrypted-otpauth-backup',
               help="path to your encrypted OTP Auth backup (.otpauthdb)",
+              default="/backup.otpauthdb",
               required=True,
               type=click.File('rb'))
 def decrypt_backup(encrypted_otpauth_backup):
