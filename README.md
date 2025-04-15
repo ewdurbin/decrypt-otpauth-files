@@ -6,10 +6,39 @@ If you find problems with the file format (in particular security related issues
 
 ## Requirements
 
-  - [Python 3.13](https://www.python.org/downloads/)
+  - [Docker](https://docs.docker.com/) or [Python 3.13](https://www.python.org/downloads/)
   - An encrypted OTP Auth backup/account file
 
 ## Usage
+
+### Docker
+
+1. Clone repository
+
+```
+git clone https://github.com/CooperRS/decrypt-otpauth-files.git
+cd decrypt-otpauth-files
+```
+
+2. Build the container
+
+```
+docker build --tag decrypt-otpauth-files:local .
+```
+
+3. Decrypt your OTP Auth file
+
+```
+# Decrypt a full backup file
+docker run -it --rm -v <path to your OTP Auth backup>:/backup.otpauthdb decrypt-otpauth-files:local decrypt-backup
+```
+
+```
+# Decrypt a single account export
+docker run -it --rm -v <path to your OTP Auth account>:/account.otpauth decrypt-otpauth-files:local decrypt-account
+```
+
+### Python
 
 1. Clone repository
 
