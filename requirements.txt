@@ -1,5 +1,5 @@
 rncryptor
-bpylist
+bpylist2
 click
 PyQRCode
 pycryptodome
